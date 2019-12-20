@@ -1,0 +1,14 @@
+declare module "commons.js/*";
+declare module "lodash/*";
+declare module '*.png';
+declare module '*.svg';
+declare module '*.gif';
+declare module 'js-cookie';
+declare module 'ali-oss';
+declare module 'g2';
+declare module 'styled-components';
+declare module 'photoswipe';
+declare module 'photoswipe/*';
+declare const _: any;
+declare const InputSizes: ["small", "default", "large"];
+// declare module "*";
