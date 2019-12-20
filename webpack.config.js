@@ -90,7 +90,7 @@ let webpackConfig = {
     contentBase: DIST_SRC,
     https: false,
     host: "0.0.0.0",
-    port: 5021,
+    port: 5077,
     overlay: true,
     compress: true,
     historyApiFallback: true,

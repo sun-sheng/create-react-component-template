@@ -1,10 +1,10 @@
 import React from 'react';
 
-interface ComponentProps {
+export interface ComponentProps {
 
 }
 
-export default class VideoPlayer extends React.Component<ComponentProps, any> {
+export default class Component extends React.Component<ComponentProps, any> {
   
   static defaultProps = {
   };
@@ -16,7 +16,7 @@ export default class VideoPlayer extends React.Component<ComponentProps, any> {
   
   render() {
     return (
-      <div>Componnet Demo</div>
+      <div className="trc-">Componnet Demo</div>
     )
   }
 

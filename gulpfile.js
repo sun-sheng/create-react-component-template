@@ -7,7 +7,7 @@ var tsProject = ts.createProject('tsconfig.json', {
 });
 var babel = require('gulp-babel');
 var minimist = require('minimist');
-var plumber = require('gulp-plumber');
+// var plumber = require('gulp-plumber');
 
 var knownOptions = {
   string: 'dest',
@@ -25,11 +25,9 @@ gulp.task('sass', function () {
 });
 
 gulp.task('dts', function() {
-  var tsResult = tsProject.src()
-      .pipe(plumber())
-      .pipe(tsProject())
-  return tsResult.dts
-    .pipe(gulp.dest('./' + dest));
+  var tsResult = tsProject.src().pipe(tsProject())
+  // console.log(tsResult.dts)
+  return tsResult.dts.pipe(gulp.dest('./' + dest));
 });
 
 gulp.task('ts', function() {
