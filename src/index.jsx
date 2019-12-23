@@ -1,15 +1,11 @@
 import React from 'react';
 
-export interface ComponentProps {
-
-}
-
-export default class Component extends React.Component<ComponentProps, any> {
+export default class Component extends React.Component {
   
   static defaultProps = {
   };
 
-  constructor(props: ComponentProps) {
+  constructor(props) {
     super(props);
     this.state = {}
   }

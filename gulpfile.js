@@ -1,10 +1,5 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var ts = require('gulp-typescript');
-var tsProject = ts.createProject('tsconfig.json', {
-  // declaration: true,
-  // allowJs: true,
-});
 var babel = require('gulp-babel');
 var minimist = require('minimist');
 // var plumber = require('gulp-plumber');
@@ -24,14 +19,8 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./' + dest));
 });
 
-gulp.task('dts', function() {
-  var tsResult = tsProject.src().pipe(tsProject())
-  // console.log(tsResult.dts)
-  return tsResult.dts.pipe(gulp.dest('./' + dest));
-});
-
-gulp.task('ts', function() {
-  return gulp.src('./src/**/*.{ts,tsx,js,jsx}')
+gulp.task('jsx', function() {
+  return gulp.src('./src/**/*.{js,jsx}')
     .pipe(babel({
       presets: [
         "@babel/typescript",
@@ -48,9 +37,9 @@ gulp.task('ts', function() {
 });
 
 gulp.task('assets', function() {
-  return gulp.src('./src/**/*.!(tsx|ts|jsx|js)')
+  return gulp.src('./src/**/*.!(jsx|js)')
     .pipe(gulp.dest('./' + dest))
 })
 
-gulp.task('compile', gulp.parallel('ts', 'dts', 'assets', 'sass'));
+gulp.task('compile', gulp.parallel('jsx', 'assets', 'sass'));
 
